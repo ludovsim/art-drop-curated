@@ -9,8 +9,9 @@ const DropCountdown = () => {
   });
 
   useEffect(() => {
-    // Date du drop : 31 juillet 2024 à 18h00
-    const dropDate = new Date('2024-07-31T18:00:00').getTime();
+    // Drop dans 7 jours à partir de maintenant
+    const now = new Date();
+    const dropDate = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000).getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
