@@ -6,6 +6,10 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import fragment1 from "@/assets/hockney-fragment-1.jpg";
 import fragment2 from "@/assets/hockney-fragment-2.jpg";
+import fragment3 from "@/assets/hockney-fragment-3.jpg";
+import fragment4 from "@/assets/hockney-fragment-4.jpg";
+import fragment5 from "@/assets/hockney-fragment-5.jpg";
+import davidHockneyPortrait from "@/assets/david-hockney-portrait.jpg";
 
 const ArtworkDetail = () => {
   const { id } = useParams();
@@ -19,7 +23,7 @@ const ArtworkDetail = () => {
       available: true,
       image: fragment1,
       description: "Une œuvre emblématique de la série Pool de David Hockney, capturant la lumière californienne et les reflets de l'eau avec une précision remarquable.",
-      dimensions: "70 × 50 cm",
+      dimensions: "15 × 15 cm",
       technique: "Édition numérique limitée",
       year: "2024"
     },
@@ -30,13 +34,22 @@ const ArtworkDetail = () => {
       available: false,
       image: fragment2,
       description: "Deuxième pièce de cette collection exclusive, explorant les jeux de lumière et d'ombre caractéristiques du maître britannique.",
-      dimensions: "70 × 50 cm", 
+      dimensions: "15 × 15 cm", 
       technique: "Édition numérique limitée",
       year: "2024"
     }
   };
 
   const artwork = artworks[id as keyof typeof artworks];
+
+  // Autres œuvres de la collection pour suggestions
+  const otherArtworks = [
+    { id: "003", title: "Pool Series #003", price: "€950", image: fragment3, available: true },
+    { id: "004", title: "Pool Series #004", price: "€950", image: fragment4, available: false },
+    { id: "005", title: "Pool Series #005", price: "€950", image: fragment5, available: true },
+    { id: "006", title: "Pool Series #006", price: "€950", image: fragment1, available: true },
+    { id: "007", title: "Pool Series #007", price: "€950", image: fragment2, available: false }
+  ].filter(item => item.id !== id);
 
   if (!artwork) {
     return (
@@ -159,6 +172,72 @@ const ArtworkDetail = () => {
                     <span className="text-muted-foreground">Authentification</span>
                     <span>Certificat inclus</span>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Autres œuvres de la collection */}
+          <div className="mt-16 border-t pt-16">
+            <h2 className="text-2xl font-thin mb-8 text-center">Autres œuvres de la collection</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              {otherArtworks.slice(0, 5).map((item) => (
+                <Link 
+                  key={item.id} 
+                  to={`/collections/david-hockney/${item.id}`}
+                  className="group"
+                >
+                  <div className="relative overflow-hidden rounded-lg bg-muted aspect-square">
+                    <img 
+                      src={item.image} 
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                    />
+                    {!item.available && (
+                      <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                        <Badge className="bg-red-600 text-white text-xs">
+                          SOLD OUT
+                        </Badge>
+                      </div>
+                    )}
+                    <div className="absolute bottom-2 left-2 right-2">
+                      <p className="text-white text-xs font-medium">{item.title}</p>
+                      <p className="text-white/80 text-xs">{item.price}</p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Présentation de l'artiste */}
+          <div className="mt-16 border-t pt-16">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <h2 className="text-3xl font-thin">À propos de David Hockney</h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  David Hockney (né en 1937) est l'un des artistes britanniques les plus influents de sa génération. 
+                  Connu pour ses peintures de piscines californiennes, ses portraits vibrants et ses paysages innovants, 
+                  Hockney a révolutionné l'art contemporain avec son style unique et sa maîtrise de la couleur.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Sa série "Pool Paintings" des années 1960-70 capture l'essence du rêve californien avec 
+                  une précision technique remarquable et une sensibilité artistique exceptionnelle. 
+                  Chaque œuvre explore les reflets, la lumière et le mouvement de l'eau avec une poésie visuelle unique.
+                </p>
+                <div className="space-y-2">
+                  <p className="text-sm font-medium">Né en 1937 à Bradford, Angleterre</p>
+                  <p className="text-sm font-medium">Membre de la Royal Academy of Arts</p>
+                  <p className="text-sm font-medium">Œuvres exposées dans les plus grands musées mondiaux</p>
+                </div>
+              </div>
+              <div className="flex justify-center">
+                <div className="w-80 h-80 overflow-hidden rounded-lg">
+                  <img 
+                    src={davidHockneyPortrait} 
+                    alt="Portrait de David Hockney"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
