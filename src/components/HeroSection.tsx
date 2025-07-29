@@ -21,7 +21,7 @@ const HeroSection = () => {
         {/* Top left - Artist name */}
         <div className="flex-1 flex items-start">
           <div className="mt-16">
-            <AnimatedArtistName />
+            <AnimatedArtistName name="DAMIEN HIRST" />
             <p className="text-lg md:text-xl font-light text-white/90 tracking-wide mt-2">
               SPOT PAINTINGS
             </p>

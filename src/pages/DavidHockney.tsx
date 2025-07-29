@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import AnimatedArtistName from "@/components/AnimatedArtistName";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -41,9 +42,7 @@ const DavidHockney = () => {
           {/* Top left - Artist name */}
           <div className="flex-1 flex items-start">
             <div className="mt-16">
-              <h1 className="text-7xl md:text-9xl font-thin text-white tracking-wider">
-                DAVID HOCKNEY
-              </h1>
+              <AnimatedArtistName name="DAVID HOCKNEY" />
               <p className="text-lg md:text-xl font-light text-white/90 tracking-wide mt-2">
                 POOL SERIES
               </p>
