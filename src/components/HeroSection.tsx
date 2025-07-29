@@ -12,7 +12,7 @@ const HeroSection = () => {
           alt="Collection Damien Hirst Spot Paintings" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
       
       {/* Minimal info overlay */}
