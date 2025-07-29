@@ -114,7 +114,7 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'slow-zoom': 'slow-zoom 180s ease-in-out infinite alternate'
+				'slow-zoom': 'slow-zoom 90s ease-in-out infinite alternate'
 			}
 		}
 	},
