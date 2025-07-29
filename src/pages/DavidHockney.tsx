@@ -3,14 +3,23 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import hockneyArt from "/lovable-uploads/317f8948-9be3-4d6b-85e9-d783e29a8e62.png";
+import fragment1 from "@/assets/hockney-fragment-1.jpg";
+import fragment2 from "@/assets/hockney-fragment-2.jpg";
+import fragment3 from "@/assets/hockney-fragment-3.jpg";
+import fragment4 from "@/assets/hockney-fragment-4.jpg";
+import fragment5 from "@/assets/hockney-fragment-5.jpg";
 
 const DavidHockney = () => {
+  // Images de fragments pour varier les œuvres
+  const fragments = [fragment1, fragment2, fragment3, fragment4, fragment5];
+  
   // Génération d'œuvres fictives sold out
   const artworks = Array.from({ length: 100 }, (_, i) => ({
     id: i + 1,
     title: `Pool Series #${String(i + 1).padStart(3, '0')}`,
     price: "950€",
-    soldOut: true
+    soldOut: true,
+    image: fragments[i % fragments.length]
   }));
 
   return (
@@ -132,10 +141,15 @@ const DavidHockney = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
               {artworks.map((artwork) => (
                 <Card key={artwork.id} className="relative overflow-hidden group cursor-not-allowed">
-                  <CardContent className="p-0 aspect-square bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 relative">
+                  <CardContent className="p-0 aspect-square relative overflow-hidden">
+                    <img 
+                      src={artwork.image} 
+                      alt={artwork.title}
+                      className="w-full h-full object-cover"
+                    />
                     <div className="absolute inset-0 bg-black/20"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-white/70 text-center">
+                      <div className="text-white/90 text-center">
                         <p className="text-xs font-light">{artwork.title}</p>
                       </div>
                     </div>
@@ -144,11 +158,11 @@ const DavidHockney = () => {
                         SOLD OUT
                       </Badge>
                     </div>
-                    <div className="absolute bottom-2 left-2 text-white/80 text-xs">
+                    <div className="absolute bottom-2 left-2 text-white text-xs font-medium">
                       {artwork.price}
                     </div>
                     {/* Overlay pour indiquer sold out */}
-                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                       <span className="text-white font-medium text-sm">ÉPUISÉ</span>
                     </div>
                   </CardContent>
