@@ -1,6 +1,12 @@
 import { Button } from "./ui/button";
-import { User } from "lucide-react";
+import { User, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 
 const Header = () => {
   return (
@@ -13,14 +19,29 @@ const Header = () => {
         
         {/* Navigation */}
         <div className="flex items-center space-x-8">
-          <Link to="/collections/david-hockney">
-            <Button 
-              variant="ghost" 
-              className="text-white hover:text-white hover:bg-white/10 font-light tracking-wide"
-            >
-              Collections
-            </Button>
-          </Link>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button 
+                variant="ghost" 
+                className="text-white hover:text-white hover:bg-white/10 font-light tracking-wide flex items-center gap-1"
+              >
+                Collections
+                <ChevronDown size={16} />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-black/90 border-white/20">
+              <DropdownMenuItem asChild>
+                <Link to="/" className="text-white hover:text-white hover:bg-white/10 cursor-pointer">
+                  Damien Hirst
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/collections/david-hockney" className="text-white hover:text-white hover:bg-white/10 cursor-pointer">
+                  David Hockney
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           
           <Button 
             variant="ghost" 
