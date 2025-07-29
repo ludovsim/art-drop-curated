@@ -1,76 +1,61 @@
 import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
 import heroArt from "@/assets/hero-art.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
+    <section className="fixed inset-0 w-screen h-screen overflow-hidden">
+      {/* Artwork fullscreen background */}
+      <div className="absolute inset-0">
         <img 
           src={heroArt} 
-          alt="Art contemporain" 
+          alt="Collection Basquiat" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
       </div>
       
-      <div className="container mx-auto px-6 z-10">
-        <div className="max-w-4xl">
-          <div className="mb-6 flex items-center space-x-4">
-            <Badge className="bg-art-orange text-white font-bold text-xs px-3 py-1">
-              PROCHAIN DROP
-            </Badge>
-            <span className="text-white/90 text-sm font-medium">
-              MERCREDI 31 JUILLET • 18H00
-            </span>
-          </div>
-          
-          <h1 className="text-6xl md:text-8xl font-black text-white mb-8 leading-none">
-            COLLECTION
-            <br />
-            <span className="text-art-orange">BASQUIAT</span>
-          </h1>
-          
-          <p className="text-xl text-white/90 mb-8 max-w-2xl leading-relaxed">
-            100 œuvres exclusives de Jean-Michel Basquiat. 
-            Prix fixe 950€. Accès limité aux membres premium.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <Button size="lg" className="bg-art-orange hover:bg-art-orange/90 text-white font-bold px-8 py-4 text-lg">
-              REJOINDRE LA LISTE
-            </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-black px-8 py-4 text-lg">
-              DÉCOUVRIR L'ARTISTE
-            </Button>
-          </div>
-          
-          <div className="grid grid-cols-3 gap-8 text-white">
-            <div>
-              <div className="text-3xl font-bold text-art-orange">100</div>
-              <div className="text-sm text-white/70">ŒUVRES UNIQUES</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-art-orange">950€</div>
-              <div className="text-sm text-white/70">PRIX FIXE</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-art-orange">7J</div>
-              <div className="text-sm text-white/70">AVANT LE DROP</div>
-            </div>
+      {/* Minimal info overlay */}
+      <div className="relative z-10 h-full flex flex-col justify-between p-8">
+        {/* Top left - Artist name */}
+        <div className="flex-1 flex items-start">
+          <div className="mt-16">
+            <h1 className="text-7xl md:text-9xl font-thin text-white tracking-wider">
+              BASQUIAT
+            </h1>
+            <p className="text-lg md:text-xl font-light text-white/90 tracking-wide mt-2">
+              COLLECTION 01
+            </p>
           </div>
         </div>
-      </div>
-      
-      <div className="absolute bottom-8 left-6 z-10">
-        <div className="text-white/60 text-xs">
-          01. NEXT DROP
-        </div>
-      </div>
-      
-      <div className="absolute bottom-8 right-6 z-10">
-        <div className="text-white text-sm font-medium">
-          07/29
+        
+        {/* Bottom right - Drop info */}
+        <div className="flex justify-end">
+          <div className="text-right space-y-6">
+            <div className="space-y-2">
+              <p className="text-sm font-light text-white/70 tracking-widest uppercase">
+                Prochain Drop
+              </p>
+              <p className="text-xl font-light text-white">
+                31 JUILLET • 18H00
+              </p>
+            </div>
+            
+            <div className="space-y-2">
+              <p className="text-sm font-light text-white/70 tracking-widest uppercase">
+                Édition Limitée
+              </p>
+              <p className="text-xl font-light text-white">
+                100 PIÈCES • 950€
+              </p>
+            </div>
+            
+            <Button 
+              size="lg" 
+              className="bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm font-light text-sm tracking-widest uppercase px-8 py-3 mt-6"
+            >
+              Rejoindre la liste
+            </Button>
+          </div>
         </div>
       </div>
     </section>

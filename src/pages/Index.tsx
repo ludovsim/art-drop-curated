@@ -1,19 +1,11 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import CountdownTimer from "@/components/CountdownTimer";
-import FeaturedCollections from "@/components/FeaturedCollections";
-import StatsSection from "@/components/StatsSection";
-import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="w-screen h-screen overflow-hidden">
       <Header />
       <HeroSection />
-      <CountdownTimer />
-      <FeaturedCollections />
-      <StatsSection />
-      <Footer />
     </div>
   );
 };
