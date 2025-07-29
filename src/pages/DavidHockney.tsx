@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import hockneyArt from "/lovable-uploads/317f8948-9be3-4d6b-85e9-d783e29a8e62.png";
+import hockneyPortrait from "/lovable-uploads/a0dc0f23-2047-4e96-ba42-6209f29434bd.png";
 import fragment1 from "@/assets/hockney-fragment-1.jpg";
 import fragment2 from "@/assets/hockney-fragment-2.jpg";
 import fragment3 from "@/assets/hockney-fragment-3.jpg";
@@ -93,11 +94,23 @@ const DavidHockney = () => {
       <section className="bg-black text-white min-h-screen py-16">
         <div className="container mx-auto px-6">
           {/* Collection Description */}
-          <div className="max-w-4xl mx-auto mb-16">
+          <div className="max-w-6xl mx-auto mb-16">
             <h2 className="text-4xl md:text-6xl font-thin mb-8 text-center">
               AN ICONIC COLLECTION
             </h2>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-3 gap-12 items-center">
+              {/* Artist Portrait */}
+              <div className="flex justify-center">
+                <div className="w-80 h-80 overflow-hidden rounded-lg">
+                  <img 
+                    src={hockneyPortrait} 
+                    alt="David Hockney portrait"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              {/* Description */}
               <div className="space-y-6">
                 <p className="text-lg text-white/70 leading-relaxed">
                   David Hockney, master of contemporary art, offers us an exclusive series 
@@ -110,6 +123,8 @@ const DavidHockney = () => {
                   A unique opportunity to own a fragment of art history.
                 </p>
               </div>
+              
+              {/* Collection Details */}
               <div className="space-y-4">
                 <div className="flex justify-between py-2 border-b border-white/20">
                   <span className="font-medium text-white">Artist</span>
