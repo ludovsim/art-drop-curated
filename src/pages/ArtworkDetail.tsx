@@ -65,7 +65,7 @@ const ArtworkDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black text-white">
       <Header />
       
       <div className="pt-20 pb-16">
@@ -74,7 +74,7 @@ const ArtworkDetail = () => {
           <div className="mb-8">
             <Link 
               to="/collections/david-hockney" 
-              className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors"
+              className="inline-flex items-center text-white/70 hover:text-white transition-colors"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Retour à la collection David Hockney
@@ -93,7 +93,7 @@ const ArtworkDetail = () => {
               </div>
               
               {/* Image info */}
-              <div className="text-sm text-muted-foreground space-y-1">
+              <div className="text-sm text-white/60 space-y-1">
                 <p><span className="font-medium">Dimensions:</span> {artwork.dimensions}</p>
                 <p><span className="font-medium">Technique:</span> {artwork.technique}</p>
                 <p><span className="font-medium">Année:</span> {artwork.year}</p>
@@ -103,13 +103,13 @@ const ArtworkDetail = () => {
             {/* Details */}
             <div className="space-y-8">
               <div>
-                <h1 className="text-4xl font-thin mb-4">{artwork.title}</h1>
-                <p className="text-xl text-muted-foreground mb-6">
+                <h1 className="text-4xl font-thin mb-4 text-white">{artwork.title}</h1>
+                <p className="text-xl text-white/70 mb-6">
                   Collection David Hockney • Pool Series
                 </p>
                 
                 <div className="flex items-center gap-4 mb-6">
-                  <p className="text-3xl font-light">{artwork.price}</p>
+                  <p className="text-3xl font-light text-white">{artwork.price}</p>
                   {!artwork.available && (
                     <Badge className="bg-red-600 text-white">
                       SOLD OUT
@@ -117,7 +117,7 @@ const ArtworkDetail = () => {
                   )}
                 </div>
 
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                <p className="text-lg text-white/70 leading-relaxed mb-8">
                   {artwork.description}
                 </p>
               </div>
@@ -132,7 +132,7 @@ const ArtworkDetail = () => {
                     >
                       Acheter maintenant
                     </Button>
-                    <p className="text-sm text-muted-foreground text-center">
+                    <p className="text-sm text-white/60 text-center">
                       Paiement sécurisé • Livraison gratuite • Certificat d'authenticité inclus
                     </p>
                   </>
@@ -141,11 +141,11 @@ const ArtworkDetail = () => {
                     <Button 
                       size="lg" 
                       disabled
-                      className="w-full bg-muted text-muted-foreground cursor-not-allowed py-3"
+                      className="w-full bg-white/10 text-white/50 border border-white/20 cursor-not-allowed py-3"
                     >
                       Épuisé
                     </Button>
-                    <p className="text-sm text-muted-foreground text-center">
+                    <p className="text-sm text-white/60 text-center">
                       Cette œuvre a été vendue. Découvrez d'autres pièces de la collection.
                     </p>
                   </>
@@ -153,24 +153,24 @@ const ArtworkDetail = () => {
               </div>
 
               {/* Additional info */}
-              <div className="border-t pt-8">
-                <h3 className="text-lg font-medium mb-4">À propos de cette œuvre</h3>
+              <div className="border-t border-white/20 pt-8">
+                <h3 className="text-lg font-medium mb-4 text-white">À propos de cette œuvre</h3>
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Artiste</span>
-                    <span>David Hockney</span>
+                    <span className="text-white/60">Artiste</span>
+                    <span className="text-white">David Hockney</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Collection</span>
-                    <span>Pool Series</span>
+                    <span className="text-white/60">Collection</span>
+                    <span className="text-white">Pool Series</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Édition</span>
-                    <span>Limitée à 100 exemplaires</span>
+                    <span className="text-white/60">Édition</span>
+                    <span className="text-white">Limitée à 100 exemplaires</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Authentification</span>
-                    <span>Certificat inclus</span>
+                    <span className="text-white/60">Authentification</span>
+                    <span className="text-white">Certificat inclus</span>
                   </div>
                 </div>
               </div>
@@ -178,8 +178,8 @@ const ArtworkDetail = () => {
           </div>
 
           {/* Autres œuvres de la collection */}
-          <div className="mt-16 border-t pt-16">
-            <h2 className="text-2xl font-thin mb-8 text-center">Autres œuvres de la collection</h2>
+          <div className="mt-16 border-t border-white/20 pt-16">
+            <h2 className="text-2xl font-thin mb-8 text-center text-white">Autres œuvres de la collection</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
               {otherArtworks.slice(0, 5).map((item) => (
                 <Link 
@@ -211,24 +211,24 @@ const ArtworkDetail = () => {
           </div>
 
           {/* Présentation de l'artiste */}
-          <div className="mt-16 border-t pt-16">
+          <div className="mt-16 border-t border-white/20 pt-16">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
-                <h2 className="text-3xl font-thin">À propos de David Hockney</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <h2 className="text-3xl font-thin text-white">À propos de David Hockney</h2>
+                <p className="text-lg text-white/70 leading-relaxed">
                   David Hockney (né en 1937) est l'un des artistes britanniques les plus influents de sa génération. 
                   Connu pour ses peintures de piscines californiennes, ses portraits vibrants et ses paysages innovants, 
                   Hockney a révolutionné l'art contemporain avec son style unique et sa maîtrise de la couleur.
                 </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-white/70 leading-relaxed">
                   Sa série "Pool Paintings" des années 1960-70 capture l'essence du rêve californien avec 
                   une précision technique remarquable et une sensibilité artistique exceptionnelle. 
                   Chaque œuvre explore les reflets, la lumière et le mouvement de l'eau avec une poésie visuelle unique.
                 </p>
                 <div className="space-y-2">
-                  <p className="text-sm font-medium">Né en 1937 à Bradford, Angleterre</p>
-                  <p className="text-sm font-medium">Membre de la Royal Academy of Arts</p>
-                  <p className="text-sm font-medium">Œuvres exposées dans les plus grands musées mondiaux</p>
+                  <p className="text-sm font-medium text-white">Né en 1937 à Bradford, Angleterre</p>
+                  <p className="text-sm font-medium text-white">Membre de la Royal Academy of Arts</p>
+                  <p className="text-sm font-medium text-white">Œuvres exposées dans les plus grands musées mondiaux</p>
                 </div>
               </div>
               <div className="flex justify-center">

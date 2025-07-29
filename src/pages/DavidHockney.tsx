@@ -90,7 +90,7 @@ const DavidHockney = () => {
       </section>
 
       {/* Collection Content */}
-      <section className="bg-background min-h-screen py-16">
+      <section className="bg-black text-white min-h-screen py-16">
         <div className="container mx-auto px-6">
           {/* Collection Description */}
           <div className="max-w-4xl mx-auto mb-16">
@@ -99,37 +99,37 @@ const DavidHockney = () => {
             </h2>
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-white/70 leading-relaxed">
                   David Hockney, master of contemporary art, offers us an exclusive series 
                   of 100 works inspired by his famous Pool Paintings. This collection 
                   explores the interplay of light and reflections that have made him world-renowned.
                 </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-white/70 leading-relaxed">
                   Each piece captures the essence of 1960s-70s California, 
                   blending realism and abstraction in perfect harmony. 
                   A unique opportunity to own a fragment of art history.
                 </p>
               </div>
               <div className="space-y-4">
-                <div className="flex justify-between py-2 border-b border-border">
-                  <span className="font-medium">Artist</span>
-                  <span>David Hockney</span>
+                <div className="flex justify-between py-2 border-b border-white/20">
+                  <span className="font-medium text-white">Artist</span>
+                  <span className="text-white/80">David Hockney</span>
                 </div>
-                <div className="flex justify-between py-2 border-b border-border">
-                  <span className="font-medium">Collection</span>
-                  <span>Pool Series</span>
+                <div className="flex justify-between py-2 border-b border-white/20">
+                  <span className="font-medium text-white">Collection</span>
+                  <span className="text-white/80">Pool Series</span>
                 </div>
-                <div className="flex justify-between py-2 border-b border-border">
-                  <span className="font-medium">Edition</span>
-                  <span>100 unique pieces</span>
+                <div className="flex justify-between py-2 border-b border-white/20">
+                  <span className="font-medium text-white">Edition</span>
+                  <span className="text-white/80">100 unique pieces</span>
                 </div>
-                <div className="flex justify-between py-2 border-b border-border">
-                  <span className="font-medium">Price</span>
-                  <span>€950 per piece</span>
+                <div className="flex justify-between py-2 border-b border-white/20">
+                  <span className="font-medium text-white">Price</span>
+                  <span className="text-white/80">€950 per piece</span>
                 </div>
-                <div className="flex justify-between py-2 border-b border-border">
-                  <span className="font-medium">Status</span>
-                  <span className="text-red-600 font-medium">Sold Out</span>
+                <div className="flex justify-between py-2 border-b border-white/20">
+                  <span className="font-medium text-white">Status</span>
+                  <span className="text-red-400 font-medium">Sold Out</span>
                 </div>
               </div>
             </div>
