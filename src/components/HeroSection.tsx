@@ -10,7 +10,7 @@ const HeroSection = () => {
         <img 
           src={damienHirstArt} 
           alt="Collection Damien Hirst Spot Paintings" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover animate-slow-zoom"
         />
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
