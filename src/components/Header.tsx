@@ -14,7 +14,7 @@ const Header = () => {
       <div className="flex items-center justify-between p-6">
         {/* Logo */}
         <Link to="/" className="text-white">
-          <h1 className="text-2xl font-bold tracking-wider">ARTDROP</h1>
+          <h1 className="text-2xl font-bold tracking-wider">ICONI</h1>
         </Link>
         
         {/* Navigation */}
