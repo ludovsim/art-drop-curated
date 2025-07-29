@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import { Link } from "react-router-dom";
 import AnimatedArtistName from "@/components/AnimatedArtistName";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -139,33 +140,39 @@ const DavidHockney = () => {
             <h3 className="text-2xl font-thin mb-8 text-center">ALL ARTWORKS</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
               {artworks.map((artwork) => (
-                <Card key={artwork.id} className="relative overflow-hidden group cursor-not-allowed">
-                  <CardContent className="p-0 aspect-square relative overflow-hidden">
-                    <img 
-                      src={artwork.image} 
-                      alt={artwork.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/20"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-white/90 text-center">
-                        <p className="text-xs font-light">{artwork.title}</p>
+                <Link 
+                  key={artwork.id} 
+                  to={`/collections/david-hockney/${artwork.id.toString().padStart(3, '0')}`}
+                  className={artwork.soldOut ? "cursor-not-allowed" : "cursor-pointer"}
+                >
+                  <Card className="relative overflow-hidden group">
+                    <CardContent className="p-0 aspect-square relative overflow-hidden">
+                      <img 
+                        src={artwork.image} 
+                        alt={artwork.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/20"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-white/90 text-center">
+                          <p className="text-xs font-light">{artwork.title}</p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="absolute top-2 right-2">
-                      <Badge className="bg-red-600 text-white text-xs">
-                        SOLD OUT
-                      </Badge>
-                    </div>
-                    <div className="absolute bottom-2 left-2 text-white text-xs font-medium">
-                      {artwork.price}
-                    </div>
-                    {/* Overlay to indicate sold out */}
-                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <span className="text-white font-medium text-sm">SOLD OUT</span>
-                    </div>
-                  </CardContent>
-                </Card>
+                      <div className="absolute top-2 right-2">
+                        <Badge className="bg-red-600 text-white text-xs">
+                          SOLD OUT
+                        </Badge>
+                      </div>
+                      <div className="absolute bottom-2 left-2 text-white text-xs font-medium">
+                        {artwork.price}
+                      </div>
+                      {/* Overlay to indicate sold out */}
+                      <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span className="text-white font-medium text-sm">SOLD OUT</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>
