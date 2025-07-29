@@ -1,5 +1,6 @@
 import { Button } from "./ui/button";
-import heroArt from "@/assets/hero-art.jpg";
+import DropCountdown from "./DropCountdown";
+import damienHirstArt from "/lovable-uploads/034a0261-bafa-444a-95eb-f44e71dc432d.png";
 
 const HeroSection = () => {
   return (
@@ -7,8 +8,8 @@ const HeroSection = () => {
       {/* Artwork fullscreen background */}
       <div className="absolute inset-0">
         <img 
-          src={heroArt} 
-          alt="Collection Basquiat" 
+          src={damienHirstArt} 
+          alt="Collection Damien Hirst Spot Paintings" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/20"></div>
@@ -20,10 +21,10 @@ const HeroSection = () => {
         <div className="flex-1 flex items-start">
           <div className="mt-16">
             <h1 className="text-7xl md:text-9xl font-thin text-white tracking-wider">
-              BASQUIAT
+              DAMIEN HIRST
             </h1>
             <p className="text-lg md:text-xl font-light text-white/90 tracking-wide mt-2">
-              COLLECTION 01
+              SPOT PAINTINGS
             </p>
           </div>
         </div>
@@ -31,14 +32,7 @@ const HeroSection = () => {
         {/* Bottom right - Drop info */}
         <div className="flex justify-end">
           <div className="text-right space-y-6">
-            <div className="space-y-2">
-              <p className="text-sm font-light text-white/70 tracking-widest uppercase">
-                Prochain Drop
-              </p>
-              <p className="text-xl font-light text-white">
-                31 JUILLET • 18H00
-              </p>
-            </div>
+            <DropCountdown />
             
             <div className="space-y-2">
               <p className="text-sm font-light text-white/70 tracking-widest uppercase">
