@@ -18,6 +18,18 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'display': ['Inter', 'system-ui', 'sans-serif'],
+				'body': ['Inter', 'system-ui', 'sans-serif'],
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-accent': 'var(--gradient-accent)',
+			},
+			boxShadow: {
+				'art': 'var(--shadow-art)',
+				'glow': 'var(--shadow-glow)',
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +73,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				'art-orange': 'hsl(var(--art-orange))',
+				'art-pink': 'hsl(var(--art-pink))',
+				'art-purple': 'hsl(var(--art-purple))',
+				'art-blue': 'hsl(var(--art-blue))',
+				'art-green': 'hsl(var(--art-green))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
