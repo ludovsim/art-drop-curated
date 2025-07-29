@@ -1,6 +1,6 @@
 import { Button } from "./ui/button";
 import DropCountdown from "./DropCountdown";
-import damienHirstArt from "/lovable-uploads/034a0261-bafa-444a-95eb-f44e71dc432d.png";
+import damienHirstArt from "/lovable-uploads/0fffb3ea-7db8-4bd7-ad58-ed23372c7102.png";
 
 const HeroSection = () => {
   return (
