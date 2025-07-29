@@ -1,5 +1,6 @@
 import { Button } from "./ui/button";
 import DropCountdown from "./DropCountdown";
+import AnimatedArtistName from "./AnimatedArtistName";
 import damienHirstArt from "/lovable-uploads/2f3b6819-b856-4909-9e68-01da141a42aa.png";
 
 const HeroSection = () => {
@@ -20,9 +21,7 @@ const HeroSection = () => {
         {/* Top left - Artist name */}
         <div className="flex-1 flex items-start">
           <div className="mt-16">
-            <h1 className="text-7xl md:text-9xl font-thin text-white tracking-wider">
-              DAMIEN HIRST
-            </h1>
+            <AnimatedArtistName />
             <p className="text-lg md:text-xl font-light text-white/90 tracking-wide mt-2">
               SPOT PAINTINGS
             </p>
