@@ -36,10 +36,10 @@ const HeroSection = () => {
             
             <div className="space-y-2">
               <p className="text-sm font-light text-white/70 tracking-widest uppercase">
-                Édition Limitée
+                Limited Edition
               </p>
               <p className="text-xl font-light text-white">
-                100 PIÈCES • 950€
+                100 PIECES • €950
               </p>
             </div>
             
@@ -47,7 +47,7 @@ const HeroSection = () => {
               size="lg" 
               className="bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm font-light text-sm tracking-widest uppercase px-8 py-3 mt-6"
             >
-              Rejoindre la liste
+              Join Waitlist
             </Button>
           </div>
         </div>

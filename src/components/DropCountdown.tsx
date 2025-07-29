@@ -9,7 +9,7 @@ const DropCountdown = () => {
   });
 
   useEffect(() => {
-    // Drop dans 7 jours à partir de maintenant
+    // Drop in 7 days from now
     const now = new Date();
     const dropDate = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000).getTime();
 
@@ -35,10 +35,10 @@ const DropCountdown = () => {
   return (
     <div className="space-y-2">
       <p className="text-sm font-light text-white/70 tracking-widest uppercase">
-        Prochain Drop
+        Next Drop
       </p>
       <div className="text-xl font-light text-white space-x-4">
-        <span>{timeLeft.days}J</span>
+        <span>{timeLeft.days}D</span>
         <span>{String(timeLeft.hours).padStart(2, '0')}H</span>
         <span>{String(timeLeft.minutes).padStart(2, '0')}M</span>
         <span>{String(timeLeft.seconds).padStart(2, '0')}S</span>

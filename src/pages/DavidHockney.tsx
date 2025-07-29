@@ -10,14 +10,14 @@ import fragment4 from "@/assets/hockney-fragment-4.jpg";
 import fragment5 from "@/assets/hockney-fragment-5.jpg";
 
 const DavidHockney = () => {
-  // Images de fragments pour varier les œuvres
+  // Fragment images to vary the artworks
   const fragments = [fragment1, fragment2, fragment3, fragment4, fragment5];
   
-  // Génération d'œuvres fictives sold out
+  // Generate fictional sold out artworks
   const artworks = Array.from({ length: 100 }, (_, i) => ({
     id: i + 1,
     title: `Pool Series #${String(i + 1).padStart(3, '0')}`,
-    price: "950€",
+    price: "€950",
     soldOut: true,
     image: fragments[i % fragments.length]
   }));
@@ -58,16 +58,16 @@ const DavidHockney = () => {
                   SOLD OUT
                 </Badge>
                 <p className="text-xl font-light text-white">
-                  COLLECTION TERMINÉE
+                  COLLECTION ENDED
                 </p>
               </div>
               
               <div className="space-y-2">
                 <p className="text-sm font-light text-white/70 tracking-widest uppercase">
-                  Édition Limitée
+                  Limited Edition
                 </p>
                 <p className="text-xl font-light text-white">
-                  100 PIÈCES • 950€
+                  100 PIECES • €950
                 </p>
               </div>
               
@@ -76,7 +76,7 @@ const DavidHockney = () => {
                 disabled
                 className="bg-white/10 text-white/50 border border-white/20 backdrop-blur-sm font-light text-sm tracking-widest uppercase px-8 py-3 mt-6 cursor-not-allowed"
               >
-                Collection épuisée
+                Collection sold out
               </Button>
             </div>
           </div>
@@ -84,7 +84,7 @@ const DavidHockney = () => {
         
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/60 text-center">
-          <p className="text-xs tracking-widest uppercase mb-2">Découvrir la collection</p>
+          <p className="text-xs tracking-widest uppercase mb-2">Explore the collection</p>
           <div className="w-px h-8 bg-white/30 mx-auto"></div>
         </div>
       </section>
@@ -95,24 +95,24 @@ const DavidHockney = () => {
           {/* Collection Description */}
           <div className="max-w-4xl mx-auto mb-16">
             <h2 className="text-4xl md:text-6xl font-thin mb-8 text-center">
-              UNE COLLECTION ICONIQUE
+              AN ICONIC COLLECTION
             </h2>
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  David Hockney, maître de l'art contemporain, nous offre une série exclusive 
-                  de 100 œuvres inspirées de ses célèbres Pool Paintings. Cette collection 
-                  explore les jeux de lumière et de reflets qui ont fait sa renommée mondiale.
+                  David Hockney, master of contemporary art, offers us an exclusive series 
+                  of 100 works inspired by his famous Pool Paintings. This collection 
+                  explores the interplay of light and reflections that have made him world-renowned.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Chaque pièce capture l'essence de la Californie des années 60-70, 
-                  mêlant réalisme et abstraction dans une harmonie parfaite. 
-                  Une opportunité unique de posséder un fragment de l'histoire de l'art.
+                  Each piece captures the essence of 1960s-70s California, 
+                  blending realism and abstraction in perfect harmony. 
+                  A unique opportunity to own a fragment of art history.
                 </p>
               </div>
               <div className="space-y-4">
                 <div className="flex justify-between py-2 border-b border-border">
-                  <span className="font-medium">Artiste</span>
+                  <span className="font-medium">Artist</span>
                   <span>David Hockney</span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-border">
@@ -120,16 +120,16 @@ const DavidHockney = () => {
                   <span>Pool Series</span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-border">
-                  <span className="font-medium">Édition</span>
-                  <span>100 pièces uniques</span>
+                  <span className="font-medium">Edition</span>
+                  <span>100 unique pieces</span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-border">
-                  <span className="font-medium">Prix</span>
-                  <span>950€ par pièce</span>
+                  <span className="font-medium">Price</span>
+                  <span>€950 per piece</span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-border">
-                  <span className="font-medium">Statut</span>
-                  <span className="text-red-600 font-medium">Épuisé</span>
+                  <span className="font-medium">Status</span>
+                  <span className="text-red-600 font-medium">Sold Out</span>
                 </div>
               </div>
             </div>
@@ -137,7 +137,7 @@ const DavidHockney = () => {
 
           {/* Artworks Grid */}
           <div className="mb-16">
-            <h3 className="text-2xl font-thin mb-8 text-center">TOUTES LES ŒUVRES</h3>
+            <h3 className="text-2xl font-thin mb-8 text-center">ALL ARTWORKS</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
               {artworks.map((artwork) => (
                 <Card key={artwork.id} className="relative overflow-hidden group cursor-not-allowed">
@@ -161,9 +161,9 @@ const DavidHockney = () => {
                     <div className="absolute bottom-2 left-2 text-white text-xs font-medium">
                       {artwork.price}
                     </div>
-                    {/* Overlay pour indiquer sold out */}
+                    {/* Overlay to indicate sold out */}
                     <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <span className="text-white font-medium text-sm">ÉPUISÉ</span>
+                      <span className="text-white font-medium text-sm">SOLD OUT</span>
                     </div>
                   </CardContent>
                 </Card>
