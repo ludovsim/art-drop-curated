@@ -1,37 +1,31 @@
 import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
+import { User } from "lucide-react";
 
 const Header = () => {
   return (
-    <header className="border-b border-border">
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-8">
-            <h1 className="text-2xl font-bold tracking-tight">ARTDROP</h1>
-            <nav className="hidden md:flex space-x-6">
-              <a href="#" className="text-sm font-medium hover:text-accent transition-colors">
-                COLLECTIONS
-              </a>
-              <a href="#" className="text-sm font-medium hover:text-accent transition-colors">
-                ARTISTES
-              </a>
-              <a href="#" className="text-sm font-medium hover:text-accent transition-colors">
-                DROPS
-              </a>
-            </nav>
-          </div>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
+      <div className="flex items-center justify-between p-6">
+        {/* Logo */}
+        <div className="text-white">
+          <h1 className="text-2xl font-bold tracking-wider">ARTDROP</h1>
+        </div>
+        
+        {/* Navigation */}
+        <div className="flex items-center space-x-8">
+          <Button 
+            variant="ghost" 
+            className="text-white hover:text-white hover:bg-white/10 font-light tracking-wide"
+          >
+            Collections
+          </Button>
           
-          <div className="flex items-center space-x-4">
-            <Badge variant="secondary" className="bg-art-orange text-white font-medium">
-              LIVE
-            </Badge>
-            <Button variant="outline" size="sm">
-              CONNEXION
-            </Button>
-            <Button size="sm" className="bg-primary hover:bg-primary/90">
-              INSCRIPTION
-            </Button>
-          </div>
+          <Button 
+            variant="ghost" 
+            size="icon"
+            className="text-white hover:text-white hover:bg-white/10"
+          >
+            <User size={20} />
+          </Button>
         </div>
       </div>
     </header>
