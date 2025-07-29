@@ -1,6 +1,7 @@
 import { Button } from "./ui/button";
 import DropCountdown from "./DropCountdown";
 import AnimatedArtistName from "./AnimatedArtistName";
+import WaitlistDialog from "./WaitlistDialog";
 import damienHirstArt from "/lovable-uploads/2f3b6819-b856-4909-9e68-01da141a42aa.png";
 
 const HeroSection = () => {
@@ -23,7 +24,7 @@ const HeroSection = () => {
           <div className="mt-16">
             <AnimatedArtistName name="DAMIEN HIRST" />
             <p className="text-lg md:text-xl font-light text-white/90 tracking-wide mt-2">
-              SPOT PAINTINGS
+              UNIQUE LIMITED EDITION PAINTINGS
             </p>
           </div>
         </div>
@@ -42,12 +43,14 @@ const HeroSection = () => {
               </p>
             </div>
             
-            <Button 
-              size="lg" 
-              className="bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm font-light text-sm tracking-widest uppercase px-8 py-3 mt-6"
-            >
-              Join Waitlist
-            </Button>
+            <WaitlistDialog>
+              <Button 
+                size="lg" 
+                className="bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm font-light text-sm tracking-widest uppercase px-8 py-3 mt-6"
+              >
+                Join Waitlist
+              </Button>
+            </WaitlistDialog>
           </div>
         </div>
       </div>
